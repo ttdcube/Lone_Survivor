@@ -10,32 +10,70 @@ Bạn sẽ điều khiển nhân vật vượt qua các thử thách trong môi 
 ```
 lib/
 │
-├─ main.dart                    # Điểm khởi tạo game
-├─ core/                        # Các thành phần cốt lõi
-│   ├─ constants/               # Biến, cấu hình, hệ số cân bằng game
-│   ├─ utils/                   # Hàm tiện ích toán học, vector, random...
-│   └─ services/                # Dịch vụ hệ thống: âm thanh, dialog, lưu game...
+├─ main.dart
 │
-├─ game/                        # Logic chính của game
-│   ├─ survival_game.dart       # Lớp game tổng
-│   ├─ player/                  # Các lớp về người chơi
-│   ├─ world/                   # Quản lý thế giới, tile, object, ánh sáng, thời tiết...
-│   ├─ items/                   # Định nghĩa vật phẩm, công cụ, vũ khí...
-│   ├─ crafting/                # Quản lý chế tạo và công thức
-│   ├─ combat/                  # Hệ thống chiến đấu, sát thương...
-│   ├─ enemy/                   # Định nghĩa quái vật, AI
-│   ├─ building/                # Xây dựng công trình và quản lý
-│   ├─ physics/                 # Va chạm (collision)
-│   └─ systems/                 # Hệ thống gameplay: đói, stamina, lưu tự động, sự kiện...
+├─ core/
+│   ├─ constants/
+│   ├─ utils/
+│   └─ services/
 │
-├─ ui/                          # Giao diện người dùng
-│   ├─ hud/                     # Hiển thị: thanh máu, đói, minimap...
-│   ├─ inventory/               # Giao diện kho đồ
-│   ├─ crafting/                # Giao diện chế tạo
-│   ├─ dialogs/                 # Dialog: info vật phẩm, setting, màn hình chết
-│   └─ menu/                    # Menu chính, pause, loading
+├─ game/
+│   ├─ survival_game.dart
+│   ├─ player/
+│   ├─ world/
+│   ├─ items/
+│   ├─ crafting/
+│   ├─ combat/
+│   ├─ enemy/
+│   ├─ building/
+│   ├─ physics/
+│   └─ systems/
 │
-└─ config/                      # Cấu hình tài nguyên, mức khó
+├─ ui/
+│   ├─ hud/
+│   ├─ inventory/
+│   ├─ crafting/
+│   ├─ dialogs/
+│   └─ menu/
+│
+└─ config/
+    ├─ items/
+    │    ├─ item_list.json            # Danh sách item cơ bản
+    │    ├─ tools.json                # Công cụ
+    │    ├─ weapons.json              # Vũ khí
+    │    └─ consumables.json          # Đồ ăn, thuốc…
+    │
+    ├─ enemies/
+    │    ├─ enemy_list.json           # Danh sách quái
+    │    ├─ slime.json                # Cấu hình loại quái (HP, speed...)
+    │    ├─ wolf.json
+    │    └─ boss_ancient.json
+    │
+    ├─ crafting/
+    │    ├─ recipes.json              # Công thức tổng hợp
+    │    └─ category/
+    │         ├─ tools.json
+    │         ├─ weapons.json
+    │         ├─ building.json
+    │         └─ survival.json
+    │
+    ├─ world/
+    │    ├─ biomes.json               # Rừng, sa mạc...
+    │    ├─ tiles.json                # Cấu hình tile
+    │    ├─ spawn_rules.json          # Tần suất spawn quái/item
+    │    └─ weather.json              # Thời tiết
+    │
+    ├─ balance/
+    │    ├─ damage_coeff.json         # Hệ số tính damage
+    │    ├─ stamina_rules.json        # Quy tắc stamina
+    │    ├─ hunger_rules.json         # Đói / khát
+    │    └─ xp_level.json             # Bảng kinh nghiệm
+    │
+    └─ settings/
+         ├─ graphics.json             # FPS, particle, light level…
+         ├─ audio.json                # Âm lượng
+         └─ gameplay.json             # Độ khó, lựa chọn người chơi
+
 ```
 
 ---
